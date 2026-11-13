@@ -63,19 +63,7 @@ Reports show cited code excerpts, evidence links, editorial decisions, and limit
 
 ## How it works
 
-```mermaid
-flowchart TD
-    A[Manual check / Scheduled job] --> B[Read only GitHub collection]
-    B --> C[Save baselines, cursors, evidence, and content versions]
-    C --> D{Collection result}
-    D -->|Content changed| E[Factual brief / Optional model analysis]
-    D -->|Metrics only| F[Update metrics and charts; skip model]
-    D -->|Complete check, no changes| G[Record no changes; skip model]
-    D -->|Missing pages or failures| H[Record incomplete coverage and reasons]
-    E --> I[Daily / Weekly reports with sources and versions]
-    H --> I
-    I --> J[Web reader / Evidence / Exports]
-```
+![ObserveTrack workflow: collect and save evidence, distinguish content changes, metrics, no changes and incomplete coverage, then build reports or update records](docs/images/workflow-en.svg)
 
 ### Establish a baseline, then follow incremental activity
 
